@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import PokemonList from "./component/PokemonList";
 import axios from 'axios';
 import Pagination from "./component/Pagination";
+import LoadingWave from "./component/LoadingWave";
 
 function App() {
     const [pokemon, updatePokemon] = useState([]); // no initial state
@@ -51,11 +52,8 @@ function App() {
     }, [currentUrl]); // everytime arguments are changed in the array the effect is rerun -- empty array no rerun
 
     if (loading) {
-        let text: string = "Loading...";
         return (
-            <div>
-                {text}
-            </div>
+                <LoadingWave/>
         )
     }
 

@@ -3,6 +3,7 @@ import Modal from './Modal';
 import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faMagnifyingGlassPlus} from '@fortawesome/free-solid-svg-icons'
+import LoadingWave from "./LoadingWave";
 
 export default function Pokemon(props: any) {
     let pokemonName = props.pokemon;
@@ -40,10 +41,9 @@ export default function Pokemon(props: any) {
     }, [pokemonURL]);
 
     if (loading) {
-        let text: string = "Loading...";
         return (
             <div className="pokemon-card">
-                {text}
+                <LoadingWave/>
             </div>
         )
     }

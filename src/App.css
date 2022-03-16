@@ -270,3 +270,27 @@ h1 {
 
 
 /* TODO iceH change */
+
+
+.loadingContainer {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.pokeballContainer {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokeballContainer img {
+    height: 1rem;
+    margin-right: .5em;
+}
