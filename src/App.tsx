@@ -1,8 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import PokemonList from "./component/PokemonList";
 import axios from 'axios';
+import PokemonList from "./component/PokemonList";
 import Pagination from "./component/Pagination";
 import LoadingWave from "./component/LoadingWave";
+import useDarkMode from "./styles/UseDarkMode";
+import ToggleTheme from "./component/ToggleTheme";
+import {GlobalStyles, lightTheme, darkTheme} from "./styles/GlobalStyles";
+import styled, {ThemeProvider} from 'styled-components';
 
 function App() {
     const [pokemon, updatePokemon] = useState([]); // no initial state
@@ -12,6 +16,10 @@ function App() {
     const [previousUrl, setPreviousUrl] = useState("");
     // loading screen
     const [loading, setLoading] = useState(true); // by def site is loading
+    const [theme, toggleTheme] = useDarkMode();
+    const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
+    console.log(theme);
 
     useEffect(() => { // added for efficiency
         setLoading(true);
@@ -68,12 +76,19 @@ function App() {
 
     return (
         <>
-            <img id="logo" src="logo.svg"/>
-            <Pagination
-                goToNextPage={goToNextPage}
-                goToPreviousPage={goToPreviousPage}
+            <ThemeProvider theme = {themeMode}>
+            <img id = "logo" src = "logo.svg"/>
+            <GlobalStyles />
+            <ToggleTheme
+                theme = {theme}
+                toggleTheme = {toggleTheme}
             />
-            <PokemonList pokemon={pokemon}/>
+            <Pagination
+                goToNextPage = {goToNextPage}
+                goToPreviousPage = {goToPreviousPage}
+            />
+            <PokemonList pokemon = {pokemon}/>
+            </ThemeProvider>
         </>
 
     );

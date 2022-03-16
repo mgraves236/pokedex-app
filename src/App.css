@@ -57,7 +57,7 @@ nav {
     border: #ffffff 1px solid;
     padding: 0.5em;
     margin: 1em;
-    box-shadow: 0px 0px 10px rgba(103, 103, 103, 0.27);
+    box-shadow: 0 0 10px rgba(103, 103, 103, 0.27);
 }
 
 .modal-container {
@@ -97,13 +97,12 @@ nav {
 }
 
 .pokemon-card {
-    background: white;
     border-radius: 2em;
     border: #ffffff 1px solid;
     padding: 1em;
     margin: 1em;
     width: 15em;
-    box-shadow: 0px 0px 10px rgba(103, 103, 103, 0.27);
+    box-shadow: 0 0 10px rgba(103, 103, 103, 0.27);
 }
 
 .card-body {
@@ -268,8 +267,13 @@ h1 {
     color: rgba(var(--water), 1);
 }
 
+.flyingH {
+    color: rgb(68, 92, 122, 1);
+}
 
-/* TODO iceH change */
+.iceH {
+    color: rgb(99, 147, 159);
+}
 
 
 .loadingContainer {
@@ -293,4 +297,11 @@ h1 {
 .pokeballContainer img {
     height: 1rem;
     margin-right: .5em;
+}
+
+.toggleTheme {
+    display: inline-block;
+    font-size: 2rem;
+    text-align: left;
+    margin-bottom: 1em;
 }
