@@ -43,26 +43,48 @@ nav {
 .button {
     display: inline;
     background: var(--blue);
-    margin: 1em;
+    margin: 1em 1em 1em;
     border-radius: 0.7em;
     padding: 0.5em 1em;
     text-align: center;
     color: white;
 }
 
+.modal-background {
+    width: 16em;
+    background-color: #f6f6f6;
+    border-radius: 2em;
+    border: #ffffff 1px solid;
+    padding: 0.5em;
+    margin: 1em;
+    box-shadow: 0px 0px 10px rgba(103, 103, 103, 0.27);
+}
+
+.modal-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #5b5b5b;
+}
+
 .modal-container .title {
     font-family: inherit;
     text-shadow: none;
     text-transform: none;
-    color: black;
     font-weight: normal;
-    display: flex;
+    margin: 1em 0 -0.7em;
+    text-align: center;
+}
+.modal-footer {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
 }
 
 .more-icon {
    text-align: right;
 }
-
 
 .pokemon-list {
     margin: auto;
@@ -94,7 +116,7 @@ nav {
     height: 8em;
 }
 
-.pokemon-card h1 {
+h1 {
     text-transform: uppercase;
     font-family: 'Bungee', cursive;
     color: #ffffff;

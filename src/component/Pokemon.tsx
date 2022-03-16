@@ -53,7 +53,12 @@ export default function Pokemon(props: any) {
 
     return (
         <>
-            <div className={style}>
+            {isModalOpen && <Modal
+                pokemonName = {pokemonName}
+                pokemonStats = {pokemonStats}
+                closeModal = {setModalOpen}
+            />}
+            {!isModalOpen && <div className={style}>
                 <FontAwesomeIcon className={styleH} icon={faMagnifyingGlassPlus}
                 onClick={() => {setModalOpen(true)}}/>
                 <div className="card-body">
@@ -61,10 +66,7 @@ export default function Pokemon(props: any) {
                 <h1>{pokemonName}</h1>
                 <h3 className={styleH}>{pokemonStats.types[0].type.name}</h3>
                 </div>
-                {isModalOpen && <Modal
-                pokemonStats = {pokemonStats}
-                />}
-            </div>
+            </div>}
         </>
     );
 }
