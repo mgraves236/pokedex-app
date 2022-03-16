@@ -1,11 +1,14 @@
 import React from 'react';
+import Pokemon from "./Pokemon";
 
-export default function PokemonList (props:any) {
+export default function PokemonList(props: any) {
     let pokemon = props.pokemon;
     return (
-        <div>
-            {pokemon.map ((p:any) => ( // print a list of names for each pokemon p
-                <div key = "{p}">{p}</div>
+        <div className="pokemon-list">
+            {pokemon.map((p: any) => ( // print each pokemon
+                <Pokemon key={p}
+                    pokemon={p}
+                />
             ))}
         </div>
     );
