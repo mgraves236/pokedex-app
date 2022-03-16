@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import PokemonList from "./PokemonList";
+import PokemonList from "./component/PokemonList";
 import axios from 'axios';
-import Pagination from "./Pagination";
+import Pagination from "./component/Pagination";
 
 function App() {
     const [pokemon, updatePokemon] = useState([]); // no initial state
@@ -70,7 +70,7 @@ function App() {
 
     return (
         <>
-            <h1>Pokedex App</h1>
+            <img id="logo" src="logo.svg"/>
             <Pagination
                 goToNextPage={goToNextPage}
                 goToPreviousPage={goToPreviousPage}

@@ -1,11 +1,16 @@
 import React, {useEffect, useState} from 'react';
+import Modal from './Modal';
 import axios from "axios";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faMagnifyingGlassPlus} from '@fortawesome/free-solid-svg-icons'
 
 export default function Pokemon(props: any) {
     let pokemonName = props.pokemon;
     const [loading, setLoading] = useState(true);
     const [pokemonStats, updatePokemonStats] = useState<any>();
     const pokemonURL = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+
+    const [isModalOpen, setModalOpen] = useState(false); // modal is closed initially
 
     useEffect(() => { // added for efficiency
         setLoading(true);
@@ -44,13 +49,21 @@ export default function Pokemon(props: any) {
     }
 
     const style = pokemonStats.types[0].type.name + " pokemon-card";
+    const styleH = pokemonStats.types[0].type.name + "H";
 
     return (
         <>
             <div className={style}>
+                <FontAwesomeIcon className={styleH} icon={faMagnifyingGlassPlus}
+                onClick={() => {setModalOpen(true)}}/>
+                <div className="card-body">
                 <img src={pokemonStats.sprites.other.home.front_default}/>
                 <h1>{pokemonName}</h1>
-                <h3>{pokemonStats.types[0].type.name}</h3>
+                <h3 className={styleH}>{pokemonStats.types[0].type.name}</h3>
+                </div>
+                {isModalOpen && <Modal
+                pokemonStats = {pokemonStats}
+                />}
             </div>
         </>
     );

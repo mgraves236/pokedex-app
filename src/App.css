@@ -2,12 +2,33 @@
     --blue: #3b5ca8;
     --yellow: #ffcb00;
     --red: #ef5350;
+    --rock: 183, 126, 104;
+    --ghost: 194, 156, 194;
+    --electric: 248, 248, 157;
+    --bug: 103, 183, 121;
+    --poison: 190, 157, 230;
+    --normal: 225, 196, 205;
+    --fairy: 240, 135, 177;
+    --fire: 246, 60, 72;
+    --grass: 115, 230, 143;
+    --dark: 118, 117, 154;
+    --dragon: 128, 202, 212;
+    --fighting: 247, 149, 121;
+    --flying: 181, 206, 223;
+    --ground: 184, 143, 96;
+    --ice: 217, 242, 251;
+    --psychic: 244, 152, 201;
+    --steel: 180, 195, 190;
+    --water: 200, 216, 255;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
 }
 
+#logo {
+    height: 10vh;
+}
 
 nav {
     display: flex;
@@ -21,13 +42,27 @@ nav {
 
 .button {
     display: inline;
-    background: var(--red);
+    background: var(--blue);
     margin: 1em;
     border-radius: 0.7em;
     padding: 0.5em 1em;
     text-align: center;
     color: white;
 }
+
+.modal-container .title {
+    font-family: inherit;
+    text-shadow: none;
+    text-transform: none;
+    color: black;
+    font-weight: normal;
+    display: flex;
+}
+
+.more-icon {
+   text-align: right;
+}
+
 
 .pokemon-list {
     margin: auto;
@@ -45,11 +80,14 @@ nav {
     border: #ffffff 1px solid;
     padding: 1em;
     margin: 1em;
+    width: 15em;
+    box-shadow: 0px 0px 10px rgba(103, 103, 103, 0.27);
+}
+
+.card-body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 25%;
-    box-shadow: 0px 0px 15px rgba(103, 103, 103, 0.27);
 }
 
 .pokemon-card img {
@@ -60,85 +98,153 @@ nav {
     text-transform: uppercase;
     font-family: 'Bungee', cursive;
     color: #ffffff;
-    text-shadow: 0 0.1rem 5px #414141;
+    text-shadow: 0 0.1rem 5px rgba(65, 65, 65, 0.58);
     margin: 0;
 }
 
 .pokemon-card h3 {
     text-transform: uppercase;
-    color: #575757;
     font-size: 1em;
     margin: 0;
 }
 
 .rock {
-    background-color: rgba(183, 126, 104, 0.32);
+    background-color: rgba(var(--rock), 0.32);
 }
 
 .ghost {
-    background-color: rgba(194, 156, 194, 0.47);
+    background-color: rgba(var(--ghost), 0.47);
 }
 
 .electric {
-    background-color: rgba(248, 248, 157, 0.34);
+    background-color: rgba(var(--electric), 0.2);
 }
 
 .bug {
-    background-color: rgba(103, 183, 121, 0.35);
+    background-color: rgba(var(--bug), 0.35);
 }
 
 .poison {
-    background-color: rgba(190, 157, 230, 0.33);
+    background-color: rgba(var(--poison), 0.33);
 }
 
 .normal {
-    background-color: rgba(225, 196, 205, 0.2);
+    background-color: rgba(var(--normal), 0.2);
 }
 
 .fairy {
-    background-color: rgba(240, 135, 177, 0.22);
+    background-color: rgba(var(--fairy), 0.22);
 }
 
 .fire {
-    background-color: rgba(246, 60, 72, 0.18);
+    background-color: rgba(var(--fire), 0.18);
 }
 
 .grass {
-    background-color: rgba(115, 230, 143, 0.24);
+    background-color: rgba(var(--grass), 0.24);
 }
 
 .dark {
-    background-color: rgba(118, 117, 154, 0.34);
+    background-color: rgba(var(--dark), 0.34);
 }
 
 .dragon {
-    background-color: rgba(128, 202, 212, 0.46);
+    background-color: rgba(var(--dragon), 0.46);
 }
 
 .fighting {
-    background-color: rgba(247, 149, 121, 0.49);
+    background-color: rgba(var(--fighting), 0.49);
 }
 
 .flying {
-    background-color: #b5cedf;
+    background-color: rgba(var(--flying), 1);
 }
 
 .ground {
-    background-color: rgba(184, 143, 96, 0.4);
+    background-color: rgba(var(--ground), 0.4);
 }
 
 .ice {
-    background-color: #d9f2fb;
+    background-color: rgba(var(--ice), 1);
 }
 
 .psychic {
-    background-color: rgba(244, 152, 201, 0.42);
+    background-color: rgba(var(--psychic), 0.42);
 }
 
 .steel {
-    background-color: rgba(180, 195, 190, 0.39);
+    background-color: rgba(var(--steel), 0.39);
 }
 
 .water {
-    background-color: rgba(200, 216, 255, 0.32);
+    background-color: rgba(var(--water), 0.32);
 }
+
+/* HEADINGS */
+
+.rockH {
+    color: rgba(var(--rock), 1);
+}
+
+.ghostH {
+    color: rgba(var(--ghost), 1);
+}
+
+.electricH {
+    color: rgba(var(--electric), 1);
+}
+
+.bugH {
+    color: rgba(var(--bug), 1);
+}
+
+.poisonH {
+    color: rgba(var(--poison), 1);
+}
+
+.normalH {
+    color: rgba(var(--normal), 1);
+}
+
+.fairyH {
+    color: rgba(var(--fairy), 1);
+}
+
+.fireH {
+    color: rgba(var(--fire), 1);
+}
+
+.grassH {
+    color: rgba(var(--grass), 1);
+}
+
+.darkH {
+    color: rgba(var(--dark), 1);
+}
+
+.dragonH {
+    color: rgba(var(--dragon), 1);
+}
+
+.fightingH {
+    color: rgba(var(--fighting), 1);
+}
+
+.groundH {
+    color: rgba(var(--ground), 1);
+}
+
+.psychicH {
+    color: rgba(var(--psychic), 1);
+}
+
+.steelH {
+    color: rgba(var(--steel), 1);
+}
+
+.waterH {
+    color: rgba(var(--water), 1);
+}
+
+
+/* TODO iceH change */
